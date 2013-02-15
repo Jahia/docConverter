@@ -51,6 +51,11 @@
     <name>Jahia Document Converter</name>
     <packaging>bundle</packaging>
     <description>These are the custom module (Jahia Document Converter) for running on a Jahia server.</description>
+    <scm>
+        <connection>scm:git:git@github.com:Jahia/docConverter.git</connection>
+        <url>scm:git:git@github.com:Jahia/docConverter.git</url>
+        <developerConnection>scm:git:git@github.com:Jahia/docConverter.git</developerConnection>
+    </scm>
     <repositories>
         <repository>
             <id>jahia-public</id>
