@@ -40,28 +40,27 @@
 
 package org.jahia.modules.docconverter.rules;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.StringUtils;
+import org.artofsolving.jodconverter.document.DocumentFormat;
+import org.drools.core.spi.KnowledgeHelper;
+import org.jahia.services.content.JCRContentUtils;
+import org.jahia.services.content.JCRNodeWrapper;
+import org.jahia.services.content.rules.AddedNodeFact;
+import org.jahia.services.transform.DocumentConverterService;
+import org.slf4j.Logger;
+
+import javax.jcr.RepositoryException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
-import javax.jcr.RepositoryException;
-
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.artofsolving.jodconverter.document.DocumentFormat;
-import org.drools.spi.KnowledgeHelper;
-import org.jahia.services.content.JCRContentUtils;
-import org.jahia.services.content.JCRNodeWrapper;
-import org.jahia.services.content.rules.AddedNodeFact;
-import org.jahia.services.transform.DocumentConverterService;
-
 /**
  * Service class for converting documents from the right-hand-side
  * (consequences) of rules.
- * 
+ *
  * @author Sergiy Shyrkov
  */
 public class DocumentConverterRuleService {
@@ -72,17 +71,17 @@ public class DocumentConverterRuleService {
 
     /**
      * Converts the specified node using target MIME type.
-     * 
-     * @param nodeFact the node to be converted
-     * @param targetMimeType the target MIME type
+     *
+     * @param nodeFact          the node to be converted
+     * @param targetMimeType    the target MIME type
      * @param overwriteIfExists is set to true, the existing file should be
-     *            overwritten if exists; otherwise the new file name will be
-     *            generated automatically.
-     * @param drools the rule engine helper class
+     *                          overwritten if exists; otherwise the new file name will be
+     *                          generated automatically.
+     * @param drools            the rule engine helper class
      * @throws RepositoryException in case of an error
      */
     public void convert(final AddedNodeFact nodeFact, final String targetMimeType, boolean overwriteIfExists,
-            KnowledgeHelper drools) throws RepositoryException {
+                        KnowledgeHelper drools) throws RepositoryException {
         if (!converterService.isEnabled()) {
             logger.info("Conversion service is not enabled." + " Skip converting file " + nodeFact.getPath());
             return;
@@ -138,9 +137,9 @@ public class DocumentConverterRuleService {
 
     /**
      * Injects an instance of the {@link DocumentConverterService}.
-     * 
+     *
      * @param converterService an instance of the
-     *            {@link DocumentConverterService}
+     *                         {@link DocumentConverterService}
      */
     public void setConverterService(DocumentConverterService converterService) {
         this.converterService = converterService;
