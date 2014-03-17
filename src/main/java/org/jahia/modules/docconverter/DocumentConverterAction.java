@@ -113,9 +113,12 @@ public class DocumentConverterAction extends Action {
         JCRNodeWrapper convertedFileNode;
         if (conversionSucceeded) {
             FileInputStream iStream = new FileInputStream(convertedFile);
-            convertedFileNode = convertedFilesNode.uploadFile(convertedFileName, iStream, returnedMimeType);
-            convertedFileNode.addMixin("jmix:convertedFile");
-            iStream.close();
+            try {
+                convertedFileNode = convertedFilesNode.uploadFile(convertedFileName, iStream, returnedMimeType);
+                convertedFileNode.addMixin("jmix:convertedFile");
+            } finally {
+                iStream.close();
+            }
         } else {
             convertedFileNode = convertedFilesNode.uploadFile(convertedFileName, inputFile.getInputStream(), inputFile.getContentType());
             convertedFileNode.addMixin("jmix:convertedFile");
