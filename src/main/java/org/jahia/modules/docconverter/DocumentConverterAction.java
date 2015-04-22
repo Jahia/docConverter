@@ -82,6 +82,7 @@ import org.jahia.services.render.RenderContext;
 import org.jahia.services.render.Resource;
 import org.jahia.services.render.URLResolver;
 import org.jahia.services.transform.DocumentConverterService;
+import org.jahia.services.usermanager.JahiaUser;
 import org.jahia.tools.files.FileUpload;
 import org.json.JSONObject;
 
@@ -91,6 +92,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -141,16 +143,36 @@ public class DocumentConverterAction extends Action {
             String originMimeType = inputFile.getContentType();
             String convertedFileName = FilenameUtils.getBaseName(inputFile.getName()) + "." + converterService.getExtension(
                     returnedMimeType);
-            final JCRNodeWrapper userNode = session.getNode(renderContext.getUser().getLocalPath());
-            if(!userNode.hasNode("files")) {
-                JCRTemplate.getInstance().doExecute(true, session.getUserID(), Constants.EDIT_WORKSPACE, new JCRCallback<Object>() {
+
+
+            // todo: upgrade to use JCRContentUtils and appropriate version of doExecute when possible
+            // check that the user has a files folder and create it if needed
+            final JahiaUser user = renderContext.getUser();
+            final JCRNodeWrapper userNode = session.getNode(user.getLocalPath());
+            final String filesRelPath = "files";
+            if (!userNode.hasNode(filesRelPath)) {
+                JCRTemplate.getInstance().doExecuteWithSystemSession(user.getUsername(), Constants.EDIT_WORKSPACE, new JCRCallback<Object>() {
                     @Override
                     public Object doInJCR(JCRSessionWrapper session) throws RepositoryException {
-                        JCRPublicationService.getInstance().publishByMainId(session.getNode(userNode.getPath()+"/files").getIdentifier(),Constants.EDIT_WORKSPACE,Constants.LIVE_WORKSPACE,null,false,null);
+                        // create files directory for user in edit if it doesn't already exists
+                        final String userPath = userNode.getPath();
+                        final JCRNodeWrapper editUserNode = session.getNode(userPath);
+                        final JCRNodeWrapper files;
+                        if (!editUserNode.hasNode(filesRelPath)) {
+                            files = editUserNode.addNode(filesRelPath, "jnt:folder");
+                            session.save();
+                        } else {
+                            files = editUserNode.getNode(filesRelPath);
+                        }
+
+                        // publish it
+                        JCRPublicationService.getInstance().publish(Collections.singletonList(files.getIdentifier()), Constants.EDIT_WORKSPACE, Constants.LIVE_WORKSPACE, false,
+                                null);
                         return null;
                     }
                 });
             }
+
             JCRNodeWrapper convertedFilesNode = session.getNode(renderContext.getUser().getLocalPath() + "/files");
             JCRNodeWrapper convertedFileNode;
             if (conversionSucceeded) {
