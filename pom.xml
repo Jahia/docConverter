@@ -62,6 +62,9 @@
     <url>scm:git:git@github.com:Jahia/docConverter.git</url>
     <tag>HEAD</tag>
   </scm>
+  <properties>
+    <jahia-module-signature>MCwCFCFKqBrH5QUzwikdWuuEvT4jbOCOAhQ+/RTPqncGeulszzAEbydCUjqsJg==</jahia-module-signature>
+  </properties>
   <repositories>
     <repository>
       <releases>
