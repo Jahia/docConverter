@@ -49,10 +49,10 @@
   <parent>
     <groupId>org.jahia.modules</groupId>
     <artifactId>jahia-modules</artifactId>
-    <version>7.0.0.0</version>
+    <version>8.0.0.0-SNAPSHOT</version>
   </parent>
   <artifactId>docConverter</artifactId>
-  <version>2.0.5-SNAPSHOT</version>
+  <version>3.0.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>Jahia Document Converter</name>
   <description>These are the custom module (Jahia Document Converter) for running on a Jahia server.</description>
@@ -62,6 +62,9 @@
     <url>scm:git:git@github.com:Jahia/docConverter.git</url>
     <tag>HEAD</tag>
   </scm>
+  <properties>
+    <jahia-module-signature>MCwCFCFKqBrH5QUzwikdWuuEvT4jbOCOAhQ+/RTPqncGeulszzAEbydCUjqsJg==</jahia-module-signature>
+  </properties>
   <repositories>
     <repository>
       <releases>
