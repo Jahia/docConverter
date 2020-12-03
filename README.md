@@ -70,7 +70,11 @@ More details can be found on the JODConverter Web Site (http://artofsolving.com/
 
 ### Document Viewer
 
-Jahia offers a built-in support for previewing various types of documents (PDF, Office, etc.) as a SWF flash using a player in a Web page. The direct conversion to flash is available for PDF documents only. To have a preview for non-PDF files (Microsoft Office, OpenOffice etc.) the document converter service (see Document converter) should be enabled to perform an intermediate conversion of documents to PDF files. The viewer service requires the pdf2swf utility (from SWFTools: http://www.swftools.org/) to be installed. The installation guidelines are available on the corresponding Wiki pages: http://wiki.swftools.org/wiki/Installation. The following two configuration parameters in digital-factory-config/jahia/jahia.properties file are responsible for enabling and configuring the document viewer service:
+Jahia offers a built-in support for previewing various types of documents (PDF, Office, etc.) as a SWF flash using a player in a Web page. The direct conversion to flash is available for PDF documents only. To have a preview for non-PDF files (Microsoft Office, OpenOffice etc.) the document converter service (see Document converter) should be enabled to perform an intermediate conversion of documents to PDF files. 
+
+The viewer service requires the pdf2swf utility (from SWFTools: http://www.swftools.org/) to be installed. The installation guidelines are available on the corresponding Wiki pages: http://wiki.swftools.org/wiki/Installation. 
+
+The following two configuration parameters in digital-factory-config/jahia/jahia.properties file are responsible for enabling and configuring the document viewer service:
 
 ```
 ######################################################################
