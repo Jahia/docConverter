@@ -70,7 +70,7 @@ More details can be found on the JODConverter Web Site (http://artofsolving.com/
 
 ### Document Viewer
 
-Jahia offers a built-in support for previewing various types of documents (PDF, Office, etc.) as a SWF flash using a player in a Web page. The direct conversion to flash is available for PDF documents only. To have a preview for non-PDF files (Microsoft Office, OpenOffice etc.) the document converter service (see Document converter) should be enabled to perform an intermediate conversion of documents to PDF files. 
+Jahia offers a built-in support for previewing various types of documents (PDF, Office, etc.) as a SWF flash using a player in a Web page. The direct conversion to flash is available for PDF documents only. To have a preview for non-PDF files (Microsoft Office, OpenOffice etc.) the document converter service should be enabled to perform an intermediate conversion of documents to PDF files. 
 
 The viewer service requires the pdf2swf utility (from SWFTools: http://www.swftools.org/) to be installed. The installation guidelines are available on the corresponding Wiki pages: http://wiki.swftools.org/wiki/Installation. 
 
@@ -104,9 +104,9 @@ In Jahia we are pleased to offer an out-of-the-box support for automatic creatio
 
 The service is enabled by default for all PDF documents. A thumbnail is automatically created for the first page of an uploaded document.
 
-To have thumbnails for non-PDF files (Microsoft Office, OpenOffice etc.) the document converter service (see Document converter) should be enabled to perform an intermediate conversion of documents to PDF files.
+To have thumbnails for non-PDF files (Microsoft Office, OpenOffice etc.) the document converter service should be enabled to perform an intermediate conversion of documents to PDF files.
 
-The following entry in the digital-factory-config/jahia/jahia.properties file is responsible for enabling/disabling the document thumbnails service:
+The following entry in the `digital-factory-config/jahia/jahia.properties` file is responsible for enabling/disabling the document thumbnails service:
 
 ```
 ######################################################################
