@@ -79,6 +79,6 @@ documentConverter.officeHome = /usr/lib/openoffice
 soffice -headless -accept="socket,host=192.168.1.101,port=19001;urp;" -nofirststartwizard
 +------------------------   
 
-  More details can be found on the {{{http://artofsolving.com/node/10} JODConverter Web Site}},
-  including HowTo for {{{http://artofsolving.com/node/11} Creating an OpenOffice.org Service on Windows}} and
-  {{{http://artofsolving.com/node/12} Creating an OpenOffice.org Service on Unix-like systems}}.
+  More details can be found on the {{{https://github.com/sbraconnier/jodconverter/wiki/} JODConverter Web Site}},
+  including HowTo for {{{https://github.com/sbraconnier/jodconverter/wiki/Command-Line-Tool} Creating an OpenOffice.org Service on Windows}} and
+  Creating an OpenOffice.org Service on Unix-like systems.
