@@ -23,10 +23,10 @@ Jahia Document Converter Module
 * Supported {formats}
 
   Jahia delegates the conversion tasks to the back-end {{{http://www.openoffice.org/}OpenOffice}} service via the
-  {{{http://code.google.com/p/jodconverter/}JODConverter}} library.
+  {{{https://github.com/sbraconnier/jodconverter/}JODConverter}} library.
   Thus the list of supported conversion formats is defined by the target OpenOffice service.
-  
-  The reference table is provided on the {{{http://www.artofsolving.com/opensource/jodconverter/guide/supportedformats}JODConverter Online Guide}} page
+
+  The reference table is provided on the {{{https://github.com/sbraconnier/jodconverter/wiki/Supported-Formats}JODConverter Online Guide}} page
   and also on the {{{http://wiki.services.openoffice.org/wiki/Framework/Article/Filter}OpenOffice.org Wiki}} site.
 
     

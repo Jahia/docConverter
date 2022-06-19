@@ -45,7 +45,7 @@ package org.jahia.modules.docconverter;
 
 import org.apache.commons.fileupload.disk.DiskFileItem;
 import org.apache.commons.io.FilenameUtils;
-import org.artofsolving.jodconverter.office.OfficeException;
+import org.jodconverter.core.office.OfficeException;
 import org.jahia.api.Constants;
 import org.jahia.bin.Action;
 import org.jahia.bin.ActionResult;
