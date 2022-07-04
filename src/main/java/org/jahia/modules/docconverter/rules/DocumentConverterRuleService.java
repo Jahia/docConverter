@@ -46,7 +46,7 @@ package org.jahia.modules.docconverter.rules;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
-import org.artofsolving.jodconverter.document.DocumentFormat;
+import org.jodconverter.core.document.DocumentFormat;
 import org.drools.core.spi.KnowledgeHelper;
 import org.jahia.services.content.JCRContentUtils;
 import org.jahia.services.content.JCRNodeWrapper;
