@@ -64,9 +64,9 @@ OpenOffice in this case should be started as a service on the 192.168.1.101 mach
 ```bash
 soffice -headless -accept="socket,host=192.168.1.101,port=19001;urp;" -nofirststartwizard
 ```
-More details can be found on the JODConverter Web Site (http://artofsolving.com/node/10), including the HowTo for:
-* Creating an OpenOffice.org Service on Windows (http://artofsolving.com/node/11)
-* Creating an OpenOffice.org Service on Unix-like systems (http://artofsolving.com/node/12).
+More details can be found on the JODConverter Web Site (https://github.com/sbraconnier/jodconverter/wiki/), including the HowTo for:
+* Creating an OpenOffice.org Service on Windows (https://github.com/sbraconnier/jodconverter/wiki/Command-Line-Tool)
+* Creating an OpenOffice.org Service on Unix-like systems (https://github.com/sbraconnier/jodconverter/wiki/Command-Line-Tool).
 
 ### Document Viewer
 

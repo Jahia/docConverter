@@ -13,7 +13,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<%--@elvariable id="format" type="org.artofsolving.jodconverter.document.DocumentFormat"--%>
+<%--@elvariable id="format" type="org.jodconverter.core.document.DocumentFormat"--%>
 <template:addResources type="javascript" resources="jquery.min.js"/>
 <template:addResources type="css" resources="converter.css,files.css"/>
 <c:if test="${renderContext.loggedIn}">
